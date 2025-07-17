@@ -12,7 +12,7 @@ services:
     startCommand: ./start.sh
     envVars:
       - key: PYTHON_VERSION
-        value: "3.11"
+        value: "3.10.11"
       - key: DATABASE_URL
         value: "mysql+pymysql://username:password@host:3306/database"
       - key: SECRET_KEY
