@@ -1,7 +1,6 @@
-# render.yaml
 services:
   - type: web
-    name: fastapi-mysql-app
+    name: proctor
     env: python
     region: oregon
     plan: starter
@@ -11,8 +10,6 @@ services:
       chmod +x start.sh
     startCommand: ./start.sh
     envVars:
-      - key: PYTHON_VERSION
-        value: "3.10.11"
       - key: DATABASE_URL
         value: "mysql+pymysql://username:password@host:3306/database"
       - key: SECRET_KEY
