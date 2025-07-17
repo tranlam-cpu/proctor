@@ -1,15 +1,9 @@
 services:
   - type: web
     name: proctor
-    env: python
-    pythonVersion: "3.10.11"
+    env: docker
     region: oregon
     plan: starter
-    buildCommand: |
-      pip install --upgrade pip
-      pip install -r requirements.txt
-      chmod +x start.sh
-    startCommand: ./start.sh
     envVars:
       - key: DATABASE_URL
         value: "mysql+pymysql://username:password@host:3306/database"
