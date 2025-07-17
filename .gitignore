@@ -1,0 +1,8 @@
+venv
+media
+.env
+cert.csr
+cert.pem
+exam.txt
+key.pem
+requirements_temp.txt

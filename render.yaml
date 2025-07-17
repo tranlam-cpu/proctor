@@ -1,0 +1,27 @@
+# render.yaml
+services:
+  - type: web
+    name: fastapi-mysql-app
+    env: python
+    region: oregon
+    plan: starter
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+      chmod +x start.sh
+    startCommand: ./start.sh
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11"
+      - key: DATABASE_URL
+        value: "mysql+pymysql://username:password@host:3306/database"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: API_V1_STR
+        value: "/api/v1"
+      - key: BACKEND_CORS_ORIGINS
+        value: '["https://yourdomain.com"]'
+      - key: ALGORITHM
+        value: "HS256"
+      - key: ENVIRONMENT
+        value: "production"
