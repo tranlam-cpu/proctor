@@ -2,6 +2,7 @@ services:
   - type: web
     name: proctor
     env: python
+    pythonVersion: "3.10.11"
     region: oregon
     plan: starter
     buildCommand: |
